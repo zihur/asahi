@@ -1,8 +1,9 @@
-# ModelPulse（型號通）
+# Asahi（朝日）
 
 產品型號查詢與 Excel 批次匯入系統。FastAPI REST API + Alpine.js / Tailwind 輕量前端。
 
-**專案代號：** `ModelPulse`  
+**GitHub：** https://github.com/zihur/asahi  
+**內部代號：** ModelPulse（Cursor 喚回仍可用）  
 **架構：** 方案 B 精簡版（API 與靜態前端分離）
 
 ---
@@ -66,7 +67,7 @@ print('done')
 - [x] CORS + frontend/api.js
 - [x] search.html 查詢頁
 - [ ] 本機實際跑通驗收
-- [ ] push 至 GitHub
+- [x] push 至 GitHub（https://github.com/zihur/asahi）
 
 ---
 
@@ -99,6 +100,7 @@ print('done')
 在 Cursor 中輸入：
 
 ```
+執行 Asahi Week 2
 執行 ModelPulse Week 2
 ```
 

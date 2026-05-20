@@ -1,19 +1,20 @@
-# ModelPulse 專案總計畫
+# Asahi 專案總計畫
 
-> **專案代號：** `ModelPulse`（中文：型號通）  
-> **Repo 名稱：** `model-pulse`  
+> **專案名稱：** `Asahi`（朝日）  
+> **GitHub：** https://github.com/zihur/asahi  
+> **內部代號：** `ModelPulse`（型號通，Cursor 喚回相容）  
 > **建立日期：** 2026-05-20  
-> **狀態：** Week 1 scaffold 已建立，待本機驗收與 push GitHub
+> **狀態：** Week 1 scaffold 已 push GitHub
 
 ---
 
 ## 喚回執行口令
 
 ```
+執行 Asahi Week 1
 執行 ModelPulse Week 1
-ModelPulse scaffold week1
-ModelPulse 開工
-繼續 ModelPulse Week 2
+Asahi 開工 / ModelPulse 開工
+繼續 Asahi Week 2
 ```
 
 **計畫文件位置（本 repo）：**

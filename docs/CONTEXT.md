@@ -16,6 +16,7 @@
 | 2026-05-20 | 前端不用 Vue/React → Alpine.js + Tailwind 手刻 |
 | 2026-05-20 | 第一個練習選方案 B 精簡版，非方案 A（Jinja2 全包） |
 | 2026-05-20 | Week 1 scaffold 建立於 Desktop/model-pulse |
+| 2026-05-20 | GitHub repo 命名為 **asahi**（https://github.com/zihur/asahi） |
 
 ## 開發者技能對照
 
