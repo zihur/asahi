@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>型號查詢 — ModelPulse</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div class="max-w-5xl mx-auto p-6" x-data="searchPage()">
+    <h1 class="text-2xl font-bold mb-2">ModelPulse 型號查詢</h1>
+    <p class="text-sm text-gray-500 mb-6">輸入型號或名稱關鍵字快速查詢</p>
+
+    <div class="flex gap-2 mb-4">
+      <input
+        type="text"
+        x-model="q"
+        @keydown.enter="doSearch()"
+        placeholder="輸入型號或名稱..."
+        class="flex-1 border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
+      />
+      <button
+        @click="doSearch()"
+        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+      >
+        查詢
+      </button>
+    </div>
+
+    <p x-show="loading" class="text-gray-500">查詢中...</p>
+    <p x-show="error" x-text="error" class="text-red-600"></p>
+    <p x-show="!loading && searched" class="text-sm text-gray-500 mb-2">
+      共 <span x-text="total"></span> 筆
+    </p>
+
+    <div class="overflow-x-auto bg-white rounded-lg shadow">
+      <table class="min-w-full text-sm">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="text-left p-3">型號</th>
+            <th class="text-left p-3">名稱</th>
+            <th class="text-left p-3">品牌</th>
+            <th class="text-left p-3">規格</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template x-for="item in items" :key="item.id">
+            <tr class="border-t hover:bg-gray-50">
+              <td class="p-3 font-mono" x-text="item.model_no"></td>
+              <td class="p-3" x-text="item.name"></td>
+              <td class="p-3" x-text="item.brand || '-'"></td>
+              <td class="p-3" x-text="item.spec || '-'"></td>
+            </tr>
+          </template>
+          <tr x-show="searched && items.length === 0">
+            <td colspan="4" class="p-6 text-center text-gray-400">查無資料</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="./js/api.js"></script>
+  <script>
+    function searchPage() {
+      return {
+        q: "",
+        items: [],
+        total: 0,
+        loading: false,
+        error: "",
+        searched: false,
+
+        async doSearch() {
+          const keyword = this.q.trim();
+          if (!keyword) return;
+
+          this.loading = true;
+          this.error = "";
+          this.searched = false;
+
+          try {
+            const data = await searchProducts(keyword);
+            this.items = data.items;
+            this.total = data.total;
+            this.searched = true;
+          } catch (e) {
+            this.error = e.message || "查詢失敗";
+            this.items = [];
+            this.total = 0;
+          } finally {
+            this.loading = false;
+          }
+        },
+      };
+    }
+  </script>
+</body>
+</html>
