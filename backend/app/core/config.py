@@ -4,7 +4,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
-    database_url: str = "postgresql+psycopg2://app:secret@localhost:5432/product_db"
+    database_url: str = "mysql+pymysql://app:secret@localhost:3306/product_db"
     api_v1_prefix: str = "/api/v1"
     cors_origins: str = "http://localhost:5500"
 

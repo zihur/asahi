@@ -47,7 +47,7 @@ docs/
 ### 後端（求職主戰場）
 
 - FastAPI + SQLAlchemy 2.0 + Pydantic v2
-- PostgreSQL 16
+- MySQL 8
 - Alembic（Week 2 起取代 create_all）
 - JWT Auth（Week 2）
 - openpyxl Excel 匯入（Week 3）
@@ -124,4 +124,4 @@ feat(api): · feat(frontend): · chore: · docs: · test: · fix:
 
 ## 求職 Portfolio 敘事
 
-> 產品型號查詢與批次匯入系統：FastAPI REST API（Pydantic 驗證、JWT、PostgreSQL），前端 Alpine.js + Tailwind 輕量介面，Excel 兩階段匯入，pytest 測試，Docker Compose 一鍵部署。
+> 產品型號查詢與批次匯入系統：FastAPI REST API（Pydantic 驗證、JWT、MySQL），前端 Alpine.js + Tailwind 輕量介面，Excel 兩階段匯入，pytest 測試，Docker Compose 一鍵部署。
